@@ -10,8 +10,11 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Link;
+use Drupal\Core\TypedData\ComplexDataDefinitionBase;
 use Drupal\Core\TypedData\DataDefinition;
 use Drupal\Core\TypedData\DataDefinitionInterface;
+use Drupal\Core\TypedData\ListDataDefinition;
+use Drupal\Core\TypedData\MapDataDefinition;
 use Drupal\Core\TypedData\TypedDataManagerInterface;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
@@ -271,27 +274,6 @@ class TypedDataExplorerController extends ControllerBase {
     ];
 
     return $build;
-  }
-
-  public function testAction() {
-    $definition = DataDefinition::create('string')
-      ->addConstraint('Length', ['max' => 5]);
-    $string_typed_data1 = \Drupal::typedDataManager()
-      ->create($definition, 'my string', 'test');
-    dpm($string_typed_data1);
-
-    $constraintManager = \Drupal::service('validation.constraint');
-    $definitions = $constraintManager->getDefinitions();
-    dpm($definitions);
-
-    $node = Node::load(2);
-    $node->setTitle('TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest');
-    $valid = $node->validate();
-    dpm($valid);
-
-    return [
-      '#markup' => 'test',
-    ];
   }
 
   /**

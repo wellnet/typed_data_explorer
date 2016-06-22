@@ -40,11 +40,3 @@ typed_data_explorer.constraints:
     _title: 'TypedData explorer - constraints'
   requirements:
     _permission: 'access site reports'
-
-typed_data_explorer.test:
-  path: '/admin/reports/typed_data_explorer_test'
-  defaults:
-    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::testAction'
-    _title: 'TypedData explorer'
-  requirements:
-    _permission: 'access site reports'
