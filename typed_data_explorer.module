@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * @param $fields
+ * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+ */
+function typed_data_explorer_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'node') {
+    /** @var \Drupal\Core\Field\BaseFieldDefinition $title */
+    $title = $fields['title'];
+    $title->addPropertyConstraints('value', ['Length' => ['max' => 5]]);
+  }
+}
+
+/**
+ * @param $operation
+ * @param \Drupal\Core\Field\FieldDefinitionInterface $field_definition
+ * @param \Drupal\Core\Session\AccountInterface $account
+ * @param \Drupal\Core\Field\FieldItemListInterface|NULL $items
+ *
+ * @return $this|\Drupal\Core\Access\AccessResult
+ */
+function typed_data_explorer_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+//  //
+//  if ($field_definition->getName() == 'field_session_accepted') {
+//    return AccessResult::forbiddenIf(!$account->hasPermission('manage sessions'))->cachePerPermissions();
+//  }
+//
+//  //
+//  if ($field_definition->getName() == 'field_room' && $operation == 'edit') {
+//    return AccessResult::forbiddenIf(!$account->hasPermission('manage sessions'))->cachePerPermissions();
+//  }
+  return AccessResult::neutral();
+}

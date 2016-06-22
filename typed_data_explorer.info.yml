@@ -1,0 +1,6 @@
+name: TypeData explorer
+type: module
+description: 'TypeData explorer.'
+core: '8.x'
+dependencies:
+  - webprofiler

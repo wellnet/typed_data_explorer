@@ -1,0 +1,50 @@
+typed_data_explorer.list:
+  path: '/admin/reports/typed_data_explorer'
+  defaults:
+    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::listAction'
+    _title: 'TypedData explorer'
+  requirements:
+    _permission: 'access site reports'
+typed_data_explorer.plugin:
+  path: '/admin/reports/typed_data_explorer/plugin/{plugin}'
+  defaults:
+    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::pluginAction'
+    _title: 'TypedData explorer - plugin'
+  requirements:
+    _permission: 'access site reports'
+typed_data_explorer.entity:
+  path: '/admin/reports/typed_data_explorer/entity'
+  defaults:
+    _form: 'Drupal\typed_data_explorer\Form\TypedDataExplorerControllerForm'
+    _title: 'TypedData explorer - entities'
+  requirements:
+    _permission: 'access site reports'
+typed_data_explorer.entity_explore:
+  path: '/admin/reports/typed_data_explorer/entity/{entity_type}/{id}'
+  defaults:
+    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::entityAction'
+    _title: 'TypedData explorer - entity'
+  requirements:
+    _permission: 'access site reports'
+typed_data_explorer.entity_property:
+  path: '/admin/reports/typed_data_explorer/entity/property/{entity_type}/{id}/{name}'
+  defaults:
+    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::entityPropertyAction'
+    _title: 'TypedData explorer - entity property'
+  requirements:
+    _permission: 'access site reports'
+typed_data_explorer.constraints:
+  path: '/admin/reports/typed_data_explorer/constraints'
+  defaults:
+    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::constraintsAction'
+    _title: 'TypedData explorer - constraints'
+  requirements:
+    _permission: 'access site reports'
+
+typed_data_explorer.test:
+  path: '/admin/reports/typed_data_explorer_test'
+  defaults:
+    _controller: 'Drupal\typed_data_explorer\Controller\TypedDataExplorerController::testAction'
+    _title: 'TypedData explorer'
+  requirements:
+    _permission: 'access site reports'

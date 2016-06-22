@@ -1,0 +1,5 @@
+typed_data_explorer.list:
+  title: 'Typed data explorer'
+  description: 'Explore Typed data.'
+  route_name: typed_data_explorer.list
+  parent: system.admin_reports

@@ -1,0 +1,15 @@
+typed_data_explorer.list:
+  title: 'Typed data plugins'
+  route_name: typed_data_explorer.list
+  base_route: typed_data_explorer.list
+  weight: 0
+typed_data_explorer.entity:
+  title: 'Entities'
+  route_name: typed_data_explorer.entity
+  base_route: typed_data_explorer.list
+  weight: 1
+typed_data_explorer.constraints:
+  title: 'Constraints'
+  route_name: typed_data_explorer.constraints
+  base_route: typed_data_explorer.list
+  weight: 1
